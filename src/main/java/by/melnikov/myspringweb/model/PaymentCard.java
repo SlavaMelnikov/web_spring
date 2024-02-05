@@ -1,6 +1,12 @@
 package by.melnikov.myspringweb.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.MapsId;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.PrimaryKeyJoinColumn;
+import jakarta.persistence.Table;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -15,7 +21,7 @@ public class PaymentCard {
 
     @MapsId
     @OneToOne
-    @JoinColumn(name = "user_id")
+    @PrimaryKeyJoinColumn(name = "user_id")
     private User user;
 
     @Column(name = "card_number", unique = true)
@@ -26,8 +32,5 @@ public class PaymentCard {
 
     @Column(name = "expired_data")
     private LocalDate expiredDate;
-
-    @Column(name = "bank")
-    private String bank;
 
 }

@@ -7,8 +7,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-// В этом классе по аналогии с service в сервлетах, должна присутствовать валидация (возможно и шифрование)
-
 @Service
 public class UserService {
 
